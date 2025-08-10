@@ -123,12 +123,20 @@ body {
   margin: 20px auto;
   display: flex;
   justify-content: center;
-  background-color: #999085;
+  background-color: #C9BBAB;
   border: none;
   color: #333;
   font-weight: bold;
   padding: 15px 0;
   border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f0f0f0;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 /* Carrusel moderno */
@@ -173,10 +181,6 @@ body {
 .carrusel-btn.prev { left: 16px; }
 .carrusel-btn.next { right: 16px; }
 
-.carrusel-btn:hover {
-  background: rgba(60,119,220,1);
-}
-
 .seccionProductoSleccionado {
   width: 90%;
   margin: 20px auto;
@@ -187,7 +191,7 @@ body {
 
 .precioProductoSeleccionado {
   font-size: 1.5rem;
-  background-color: #999085;
+  background-color: #C9BBAB;
   color: #333;
   padding: 10px 20px;
   border-radius: 10px;
@@ -219,7 +223,7 @@ body {
 }
 
 .consultaProductoWhatsapp {
-  background-color: #999085;
+  background-color: #C9BBAB;
 }
 
 .seguirViendo {
