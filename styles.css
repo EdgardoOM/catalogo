@@ -40,9 +40,9 @@ body {
   height: 70px;
   border: none;
   font-size: 1rem;
-  color: #fff;
+  color: #333;
   font-weight: bold;
-  background-color: green;
+  background-color: #C9BBAB;
   transition: background-color 0.2s;
 }
 
@@ -51,15 +51,14 @@ body {
   height: 70px;
   border: none;
   font-size: 1rem;
-  color: #fff;
+  color: #333;
   font-weight: bold;
-  background-color: green;
+  background-color: #C9BBAB;
   transition: background-color 0.2s;
 }
 
 .activo {
-  background-color: #bbbbbb;
-  color: #333;
+  background-color: #999085;
 }
 
 .buscador-contenedor {
@@ -81,13 +80,13 @@ body {
 }
 
 .buscador-input:focus {
-  border-color: green;
+  border-color: #C9BBAB;
 }
 
 .buscador-btn {
   padding: 8px 16px;
   border: none;
-  background: #3c77dc;
+  background: #C9BBAB;
   color: #fff;
   border-radius: 0 24px 24px 0;
   cursor: pointer;
@@ -106,11 +105,11 @@ body {
 .producto {
   width: 100%;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #edecea;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
 .imagenProducto {
@@ -124,9 +123,9 @@ body {
   margin: 20px auto;
   display: flex;
   justify-content: center;
-  background-color: green;
+  background-color: #999085;
   border: none;
-  color: #fff;
+  color: #333;
   font-weight: bold;
   padding: 15px 0;
   border-radius: 10px;
@@ -141,7 +140,7 @@ body {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  background: #fff;
+  background: #f9f7f3;
 }
 
 .carrusel-imagenes {
@@ -160,10 +159,10 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(60,119,220,0.8);
+  background: rgba(153,144,133,0.8);
   color: #fff;
   border: none;
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 8px 16px;
   border-radius: 50%;
   cursor: pointer;
@@ -188,8 +187,8 @@ body {
 
 .precioProductoSeleccionado {
   font-size: 1.5rem;
-  background-color: green;
-  color: #fff;
+  background-color: #999085;
+  color: #333;
   padding: 10px 20px;
   border-radius: 10px;
   font-weight: bold;
@@ -210,7 +209,7 @@ body {
 .consultaProductoWhatsapp, .seguirViendo {
   width: 100%;
   padding: 15px 0;
-  color: #fff;
+  color: #333;
   font-size: 1rem;
   font-weight: bold;
   border: none;
@@ -220,9 +219,9 @@ body {
 }
 
 .consultaProductoWhatsapp {
-  background-color: green;
+  background-color: #999085;
 }
 
 .seguirViendo {
-  background-color: #3c77dc;
+  background-color: #BC9667;
 }
