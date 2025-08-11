@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mensaje += `💲 *Precio:* ${data.precio}\n`;
     if (imagenActivaUrl) {
       mensaje += `\n${imagenActivaUrl}`;
+      console.log(`Imagen activa: ${imagenActivaUrl}`);
     }
 
     // Codificar mensaje para URL
