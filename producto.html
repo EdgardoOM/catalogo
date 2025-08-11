@@ -47,7 +47,7 @@
     });
     </script>
     <script>
-    // Botón WhatsApp con imagen activa
+    // Botón WhatsApp con imagen activa primero en el mensaje
     document.addEventListener('DOMContentLoaded', function () {
       const btnWhatsapp = document.querySelector('.consultaProductoWhatsapp');
       const numeroWhatsapp = '5492477316189'; // Cambia este número por el tuyo
@@ -69,14 +69,12 @@
         }
         const imagenActiva = images[index] ? images[index].src : '';
 
-        // Mensaje en formato moderno
-        let mensaje = `🛒 *Consulta de producto*\n\n`;
+        // Mensaje: primero la imagen sola, luego el texto
+        let mensaje = imagenActiva + "\n";
+        mensaje += `🛒 *Consulta de producto*\n\n`;
         mensaje += `*${data.nombre}*\n`;
         mensaje += `${data.descripcion}\n`;
         mensaje += `💲 *Precio:* ${data.precio}\n`;
-        if (imagenActiva) {
-          mensaje += `\n${imagenActiva}`;
-        }
 
         // Codificar mensaje para URL
         const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
