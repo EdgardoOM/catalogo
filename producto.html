@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
     mensaje += `${data.descripcion}\n`;
     mensaje += `💲 *Precio:* ${data.precio}\n`;
     if (imagenActiva) {
+      const baseUrl = 'https://github.com/EdgardoOM/catalogo/blob/main/';
+      const imagenActiva = baseUrl + data.imagenes[index];
       mensaje += `\n${imagenActiva}`;
       console.log(`Imagen activa: ${imagenActiva}`);
     }
