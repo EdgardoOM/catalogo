@@ -9,11 +9,8 @@
 <body>
     <section class="contenedor">
         <header>
-            <!-- Carrusel de imágenes moderno -->
             <div class="carrusel">
-                <div class="carrusel-imagenes" id="carrusel-imagenes">
-                    <!-- Imágenes insertadas por JS -->
-                </div>
+                <div class="carrusel-imagenes" id="carrusel-imagenes"></div>
                 <button class="carrusel-btn prev">&#10094;</button>
                 <button class="carrusel-btn next">&#10095;</button>
             </div>
@@ -25,12 +22,12 @@
         </section>
         <section class="botonesProductos">
             <button class="consultaProductoWhatsapp">Consultar por WhatsApp</button>
-            <button class="seguirViendo">Volver al catálogo</button>
+            <button class="seguirViendo">Seguir viendo</button>
         </section>
     </section>
     <script src="script.js"></script>
     <script>
-    // Cargar datos del producto seleccionado
+    // Cargar datos del producto seleccionado y las imágenes del carrusel
     document.addEventListener('DOMContentLoaded', function () {
       const data = JSON.parse(localStorage.getItem('productoSeleccionado'));
       if (data) {
@@ -50,56 +47,53 @@
     });
     </script>
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const btnWhatsapp = document.querySelector('.consultaProductoWhatsapp');
-  const numeroWhatsapp = '5492477316189'; // Cambia este número por el tuyo
+    // Botón WhatsApp con imagen activa
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnWhatsapp = document.querySelector('.consultaProductoWhatsapp');
+      const numeroWhatsapp = '5492477316189'; // Cambia este número por el tuyo
 
-  btnWhatsapp.addEventListener('click', function () {
-    const data = JSON.parse(localStorage.getItem('productoSeleccionado'));
-    if (!data) return;
+      btnWhatsapp.addEventListener('click', function () {
+        const data = JSON.parse(localStorage.getItem('productoSeleccionado'));
+        if (!data) return;
 
-    // Obtener la imagen activa del carrusel
-    const carrusel = document.getElementById('carrusel-imagenes');
-    const images = carrusel.querySelectorAll('img');
-    let index = 0;
-    // Buscar el índice actual del carrusel (por el transform)
-    const transform = carrusel.style.transform;
-    if (transform) {
-      const match = transform.match(/-([0-9]+)%/);
-      if (match) {
-        index = parseInt(match[1], 10) / 100;
-      }
-    }
+        // Obtener la imagen activa del carrusel
+        const carrusel = document.getElementById('carrusel-imagenes');
+        const images = carrusel.querySelectorAll('img');
+        let index = 0;
+        const transform = carrusel.style.transform;
+        if (transform) {
+          const match = transform.match(/-([0-9]+)%/);
+          if (match) {
+            index = parseInt(match[1], 10) / 100;
+          }
+        }
+        const imagenActiva = images[index] ? images[index].src : '';
 
-    // Construir la URL pública de la imagen activa
-    const baseUrl = 'https://edgardoom.github.io/catalogo/'; // Cambia por tu usuario y repo si es necesario
-    const imagenActivaUrl = baseUrl + data.imagenes[index];
+        // Mensaje en formato moderno
+        let mensaje = `🛒 *Consulta de producto*\n\n`;
+        mensaje += `*${data.nombre}*\n`;
+        mensaje += `${data.descripcion}\n`;
+        mensaje += `💲 *Precio:* ${data.precio}\n`;
+        if (imagenActiva) {
+          mensaje += `\n${imagenActiva}`;
+        }
 
-    // Mensaje en formato moderno
-    let mensaje = `🛒 *Consulta de producto*\n\n`;
-    mensaje += `*${data.nombre}*\n`;
-    mensaje += `${data.descripcion}\n`;
-    mensaje += `💲 *Precio:* ${data.precio}\n`;
-    if (imagenActivaUrl) {
-      mensaje += `\n${imagenActivaUrl}`;
-      console.log(`Imagen activa: ${imagenActivaUrl}`);
-    }
-
-    // Codificar mensaje para URL
-    const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-  });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const btnSeguirViendo = document.querySelector('.seguirViendo');
-  if (btnSeguirViendo) {
-    btnSeguirViendo.addEventListener('click', function () {
-      window.location.href = 'index.html';
+        // Codificar mensaje para URL
+        const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+      });
     });
-  }
-});
-</script>
+    </script>
+    <script>
+    // Botón Seguir viendo
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnSeguirViendo = document.querySelector('.seguirViendo');
+      if (btnSeguirViendo) {
+        btnSeguirViendo.addEventListener('click', function () {
+          window.location.href = 'index.html';
+        });
+      }
+    });
+    </script>
 </body>
 </html>
