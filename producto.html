@@ -70,18 +70,18 @@ document.addEventListener('DOMContentLoaded', function () {
         index = parseInt(match[1], 10) / 100;
       }
     }
-    const imagenActiva = images[index] ? images[index].src : '';
+
+    // Construir la URL pública de la imagen activa
+    const baseUrl = 'https://edgardoom.github.io/catalogo/'; // Cambia por tu usuario y repo si es necesario
+    const imagenActivaUrl = baseUrl + data.imagenes[index];
 
     // Mensaje en formato moderno
     let mensaje = `🛒 *Consulta de producto*\n\n`;
     mensaje += `*${data.nombre}*\n`;
     mensaje += `${data.descripcion}\n`;
     mensaje += `💲 *Precio:* ${data.precio}\n`;
-    if (imagenActiva) {
-      const baseUrl = 'https://github.com/EdgardoOM/catalogo/blob/main/';
-      const imagenActiva = baseUrl + data.imagenes[index];
-      mensaje += `\n${imagenActiva}`;
-      console.log(`Imagen activa: ${imagenActiva}`);
+    if (imagenActivaUrl) {
+      mensaje += `\n${imagenActivaUrl}`;
     }
 
     // Codificar mensaje para URL
