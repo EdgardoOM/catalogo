@@ -39,7 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
       productos.forEach(producto => {
         const nombre = producto.querySelector('.nombreProducto').textContent.toLowerCase();
         const descripcion = producto.querySelector('.descripcionProducto').textContent.toLowerCase();
-        if (nombre.includes(texto) || descripcion.includes(texto)) {
+        const talle = producto.querySelector('.talleProducto') ? producto.querySelector('.talleProducto').textContent.toLowerCase() : '';
+        // Buscar en nombre, talle y descripción
+        if (
+          nombre.includes(texto) ||
+          descripcion.includes(texto) ||
+          talle.includes(texto)
+        ) {
           producto.style.display = '';
         } else {
           producto.style.display = 'none';
@@ -84,4 +90,3 @@ document.addEventListener('DOMContentLoaded', function () {
       btnIndumentaria.classList.remove('activo');
     });
   }
-});
