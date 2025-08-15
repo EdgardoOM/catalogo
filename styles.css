@@ -119,12 +119,36 @@ body {
   border-radius: 5px;
 }
 
+.nombreProducto {
+  color: #333;
+}
+
+.descripcionProducto, .talleProducto {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.descripcionProducto {
+  margin-bottom: 20px;
+}
+
+.precioProducto {
+  font-size: 2rem;
+  color: #edecea;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
 .consultaWhatsapp {
   width: 90%;
   margin: 20px auto;
   display: flex;
   justify-content: center;
-  background-color: #C9BBAB;
+  background-color: #cafc05;
   border: none;
   color: #333;
   font-weight: bold;
