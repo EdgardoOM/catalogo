@@ -47,41 +47,41 @@
     });
     </script>
     <script>
-// Botón WhatsApp: un solo mensaje, imagen primero y luego los datos
-document.addEventListener('DOMContentLoaded', function () {
-  const btnWhatsapp = document.querySelector('.consultaProductoWhatsapp');
-  const numeroWhatsapp = '5492477316189'; // Cambia este número por el tuyo
+    // Botón WhatsApp: un solo mensaje, imagen primero y luego los datos
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnWhatsapp = document.querySelector('.consultaProductoWhatsapp');
+      const numeroWhatsapp = '5492477316189'; // Cambia este número por el tuyo
 
-  btnWhatsapp.addEventListener('click', function () {
-    const data = JSON.parse(localStorage.getItem('productoSeleccionado'));
-    if (!data) return;
+      btnWhatsapp.addEventListener('click', function () {
+        const data = JSON.parse(localStorage.getItem('productoSeleccionado'));
+        if (!data) return;
 
-    // Obtener la imagen activa del carrusel
-    const carrusel = document.getElementById('carrusel-imagenes');
-    const images = carrusel.querySelectorAll('img');
-    let index = 0;
-    const transform = carrusel.style.transform;
-    if (transform) {
-      const match = transform.match(/-([0-9]+)%/);
-      if (match) {
-        index = parseInt(match[1], 10) / 100;
-      }
-    }
-    const imagenActiva = images[index] ? images[index].src : '';
+        // Obtener la imagen activa del carrusel
+        const carrusel = document.getElementById('carrusel-imagenes');
+        const images = carrusel.querySelectorAll('img');
+        let index = 0;
+        const transform = carrusel.style.transform;
+        if (transform) {
+          const match = transform.match(/-([0-9]+)%/);
+          if (match) {
+            index = parseInt(match[1], 10) / 100;
+          }
+        }
+        const imagenActiva = images[index] ? images[index].src : '';
 
-    // Mensaje: primero la imagen sola, luego el texto
-    let mensaje = imagenActiva + "\n";
-    mensaje += `🛒 *Consulta de producto*\n\n`;
-    mensaje += `*${data.nombre}*\n`;
-    mensaje += `${data.descripcion}\n`;
-    mensaje += `💲 *Precio:* ${data.precio}\n`;
+        // Mensaje: primero la imagen sola, luego el texto
+        let mensaje = imagenActiva + "\n";
+        mensaje += `🛒 *Consulta de producto*\n\n`;
+        mensaje += `*${data.nombre}*\n`;
+        mensaje += `${data.descripcion}\n`;
+        mensaje += `💲 *Precio:* ${data.precio}\n`;
 
-    // Codificar mensaje para URL
-    const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-  });
-});
-</script>
+        // Codificar mensaje para URL
+        const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+      });
+    });
+    </script>
     <script>
     // Botón Seguir viendo
     document.addEventListener('DOMContentLoaded', function () {
