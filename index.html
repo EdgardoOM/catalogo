@@ -20,7 +20,6 @@
       <button class="btnIndumentaria">Indumentaria</button>
     </nav>
 
-    <!-- Buscador moderno -->
     <div class="buscador-contenedor">
       <input type="text" id="buscador" class="buscador-input" placeholder="Buscar productos...">
       <button class="buscador-btn" type="button">
@@ -39,12 +38,20 @@
           "imagenes/blanqueria1-2.png",
           "imagenes/blanqueria1-3.png"
         ]'>
-        <img class="imagenProducto" src="imagenes/blanqueria1-1.png" alt="Producto blanqueria 1">
+        <div class="carrusel">
+          <div class="carrusel-imagenes">
+            <img src="imagenes/blanqueria1-1.png" alt="Producto blanqueria 1">
+            <img src="imagenes/blanqueria1-2.png" alt="Producto blanqueria 1">
+            <img src="imagenes/blanqueria1-3.png" alt="Producto blanqueria 1">
+          </div>
+          <button class="carrusel-btn prev">&#10094;</button>
+          <button class="carrusel-btn next">&#10095;</button>
+        </div>
         <h3 class="nombreProducto">Producto blanqueria 1</h3>
         <p class="talleProducto">Disponible en talles s m l xl xxl</p>
         <p class="descripcionProducto">Descripción del producto 1. Disponible en talles s m l xl xxl</p>
         <span class="precioProducto">$100</span>
-        <button class="consultaWhatsapp" onclick="verProducto(this)">Ver Producto</button>
+        <button class="consultaWhatsapp">Consultar por WhatsApp</button>
       </div>
 
       <div class="producto blanqueria"
@@ -53,12 +60,20 @@
           "imagenes/blanqueria2-2.png",
           "imagenes/blanqueria2-3.png"
         ]'>
-        <img class="imagenProducto" src="imagenes/blanqueria2-1.png" alt="Producto blanqueria 2">
+        <div class="carrusel">
+          <div class="carrusel-imagenes">
+            <img src="imagenes/blanqueria2-1.png" alt="Producto blanqueria 2">
+            <img src="imagenes/blanqueria2-2.png" alt="Producto blanqueria 2">
+            <img src="imagenes/blanqueria2-3.png" alt="Producto blanqueria 2">
+          </div>
+          <button class="carrusel-btn prev">&#10094;</button>
+          <button class="carrusel-btn next">&#10095;</button>
+        </div>
         <h3 class="nombreProducto">Producto blanqueria 2</h3>
         <p class="talleProducto">Disponible en talles s m l xl xxl</p>
         <p class="descripcionProducto">Descripción del producto 2.</p>
         <span class="precioProducto">$150</span>
-        <button class="consultaWhatsapp" onclick="verProducto(this)">Ver Producto</button>
+        <button class="consultaWhatsapp">Consultar por WhatsApp</button>
       </div>
 
       <div class="producto indumentaria"
@@ -67,12 +82,20 @@
           "imagenes/indumentaria1-2.png",
           "imagenes/indumentaria1-3.png"
         ]'>
-        <img class="imagenProducto" src="imagenes/indumentaria1-1.png" alt="Producto indumentaria 1">
+        <div class="carrusel">
+          <div class="carrusel-imagenes">
+            <img src="imagenes/indumentaria1-1.png" alt="Producto indumentaria 1">
+            <img src="imagenes/indumentaria1-2.png" alt="Producto indumentaria 1">
+            <img src="imagenes/indumentaria1-3.png" alt="Producto indumentaria 1">
+          </div>
+          <button class="carrusel-btn prev">&#10094;</button>
+          <button class="carrusel-btn next">&#10095;</button>
+        </div>
         <h3 class="nombreProducto">Producto indumentaria 1</h3>
         <p class="talleProducto">Disponible en talles s m l xl xxl</p>
         <p class="descripcionProducto">Descripción del producto 1.</p>
         <span class="precioProducto">$200</span>
-        <button class="consultaWhatsapp" onclick="verProducto(this)">Ver Producto</button>
+        <button class="consultaWhatsapp">Consultar por WhatsApp</button>
       </div>
 
       <!-- Más productos... -->
@@ -84,18 +107,5 @@
     <p>Todos los derechos reservados.</p>
   </footer>
   <script src="script.js"></script>
-  <script>
-    function verProducto(btn) {
-      const producto = btn.closest('.producto');
-      const nombre = producto.querySelector('.nombreProducto').textContent;
-      const descripcion = producto.querySelector('.descripcionProducto').textContent;
-      const precio = producto.querySelector('.precioProducto').textContent;
-      const imagenes = JSON.parse(producto.getAttribute('data-imagenes'));
-      localStorage.setItem('productoSeleccionado', JSON.stringify({
-        nombre, descripcion, precio, imagenes
-      }));
-      window.location.href = 'producto.html';
-    }
-  </script>
 </body>
 </html>
