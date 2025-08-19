@@ -192,8 +192,8 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(153,144,133,0.3);
-  color: #fff;
+  background: rgba(153,144,133,0.7);
+  color: #cafc05;
   border: none;
   font-size: 1rem;
   padding: 8px 16px;
